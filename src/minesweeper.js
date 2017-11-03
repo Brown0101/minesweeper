@@ -1,11 +1,26 @@
-const blankLine = '  |   |  ';
-const guessLine = '1 |   |  ';
-const bombLine = '  | B |  ';
-console.log("This is what an empty board would look like:");
-console.log(blankLine);
-console.log(blankLine);
-console.log(blankLine);
-console.log("This is what a board with a guess and a bomb on it would look like:");
-console.log(guessLine);
-console.log(bombLine);
-console.log(blankLine);
+// Prints the formated board
+// array to the conole
+const printBoard = board => {
+  // Logs the Current board state
+  console.log("Current Board:");
+  // Logs the each element of the board
+  // array and joining them with the pipe.
+  console.log(board[0].join(' | '));
+  console.log(board[1].join(' | '));
+  console.log(board[2].join(' | '));
+};
+
+// Default board array
+let board = [
+  [' ', ' ', ' '],
+  [' ', ' ', ' '],
+  [' ', ' ', ' ']
+];
+
+// Dsiplay our board to teh console.
+printBoard(board);
+
+// Sample user inputs and printing board
+board[0][1] = '1';
+board[2][2] = 'B';
+printBoard(board);
